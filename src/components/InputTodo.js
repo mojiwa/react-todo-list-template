@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { TodosConsumer, TodosContext } from "../context";
+import { TodosContext } from "../context";
 
 const InputTodo = props => {
 
