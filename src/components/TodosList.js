@@ -1,16 +1,19 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import { TodosContext } from "../context";
 
 class TodosList extends React.Component {
-  render() {
+
+  static contextType = TodosContext;
+
+  render() {    
+    const value = this.context;    
     return (
       <div>
-        {this.props.todos.map(todo => (
+        {value.todos.map(todo => (
           <TodoItem
             key={todo.id}
-            todo={todo}
-            handleChangeProps={this.props.handleChangeProps}
-            deleteTodoProps={this.props.deleteTodoProps}
+            todo={todo}            
           />
         ))}
       </div>
